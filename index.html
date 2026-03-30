@@ -1,0 +1,44 @@
+<!doctype html> 
+<hmtl>
+
+<head>
+<title>  --GEOG 585L --   My First Web Map </title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css">
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+</head>
+
+<body>
+
+<p> testing preceding paragraph and empty paragraph    </p>
+
+<p> <br> 
+<!requires having the br for a break. 
+cant just be emty text with plain html </p>
+
+<p> <!defines paragraph> 
+Elements of the first map will appear here: 
+</p>
+
+<!div element is container for map>
+<div id="mapId" style="height:400px; width:600px"></div> 
+
+<script>
+// Bandalier Hall East lat/long: 35.0843° N, -106.6241° W 
+// PAIS building lat/long: 35.0818° N, -106.6218° W
+// create a map variable "mymap" that points to the map in the mapId <div>
+// create new variable for alternative "PAISmap"
+// zoom the view on PAIS building at a 17 zoom level
+// var mymap = L.map('mapId').setView([35.0843, -106.6241], 17);
+
+// had to comment out previous mymap variable. Want to know why it interfered if not invoked.
+var mymap = L.map('mapId').setView([35.0818, -106.6218], 17);
+
+// create a variable named "osm" that is used to hold OpenStreetMap tile layer
+var osm = new L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png');
+
+// add the OpenStreetMap tile layer to the Map
+osm.addTo(mymap);
+</script>
+
+</body>
+</html>
